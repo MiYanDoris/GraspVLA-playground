@@ -21,8 +21,8 @@ sudo apt install git-lfs
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/yanmi/GraspVLA-release.git
-cd GraspVLA-release
+git clone git@github.com:MiYanDoris/GraspVLA-playground.git
+cd GraspVLA-playground
 ```
 
 ### Step 2: Set Up Python Environment
