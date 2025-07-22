@@ -1,6 +1,6 @@
 # GraspVLA Simulation Environment
 
-This repository provides simulation benchmarks for GraspVLA, featuring both the popular [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) benchmark and an enhanced playground environment built on top of it.
+This repository provides simulation benchmarks for [GraspVLA](https://github.com/PKU-EPIC/GraspVLA), featuring both the popular [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) benchmark and an enhanced playground environment built on top of it.
 
 ## Features
 
