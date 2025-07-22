@@ -1,0 +1,66 @@
+
+<mujoco model="mushroom_aa422c90af77408f85e04df090e602b4">
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="1"/>
+    </default>
+    <default class="collision">
+      <geom type="mesh" condim="6" group="0"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="texture" file="material_0.png"/>
+    <material name="Material.001" texture="texture" specular="0.5" shininess="0.25"/>
+    <mesh file="visual_mesh.obj" name="visual_mesh"/>
+    <mesh file="meshes/convex_piece_0.obj" name="convex_piece_0"/>
+    <mesh file="meshes/convex_piece_1.obj" name="convex_piece_1"/>
+    <mesh file="meshes/convex_piece_10.obj" name="convex_piece_10"/>
+    <mesh file="meshes/convex_piece_11.obj" name="convex_piece_11"/>
+    <mesh file="meshes/convex_piece_12.obj" name="convex_piece_12"/>
+    <mesh file="meshes/convex_piece_13.obj" name="convex_piece_13"/>
+    <mesh file="meshes/convex_piece_14.obj" name="convex_piece_14"/>
+    <mesh file="meshes/convex_piece_15.obj" name="convex_piece_15"/>
+    <mesh file="meshes/convex_piece_16.obj" name="convex_piece_16"/>
+    <mesh file="meshes/convex_piece_17.obj" name="convex_piece_17"/>
+    <mesh file="meshes/convex_piece_18.obj" name="convex_piece_18"/>
+    <mesh file="meshes/convex_piece_19.obj" name="convex_piece_19"/>
+    <mesh file="meshes/convex_piece_2.obj" name="convex_piece_2"/>
+    <mesh file="meshes/convex_piece_3.obj" name="convex_piece_3"/>
+    <mesh file="meshes/convex_piece_4.obj" name="convex_piece_4"/>
+    <mesh file="meshes/convex_piece_5.obj" name="convex_piece_5"/>
+    <mesh file="meshes/convex_piece_6.obj" name="convex_piece_6"/>
+    <mesh file="meshes/convex_piece_7.obj" name="convex_piece_7"/>
+    <mesh file="meshes/convex_piece_8.obj" name="convex_piece_8"/>
+    <mesh file="meshes/convex_piece_9.obj" name="convex_piece_9"/>
+  </asset>
+  <worldbody>
+    <body>
+    <body name="object">
+      <geom material="Material.001" mesh="visual_mesh" class="visual"/>
+      <geom mesh="convex_piece_0" class="collision"/>
+      <geom mesh="convex_piece_1" class="collision"/>
+      <geom mesh="convex_piece_10" class="collision"/>
+      <geom mesh="convex_piece_11" class="collision"/>
+      <geom mesh="convex_piece_12" class="collision"/>
+      <geom mesh="convex_piece_13" class="collision"/>
+      <geom mesh="convex_piece_14" class="collision"/>
+      <geom mesh="convex_piece_15" class="collision"/>
+      <geom mesh="convex_piece_16" class="collision"/>
+      <geom mesh="convex_piece_17" class="collision"/>
+      <geom mesh="convex_piece_18" class="collision"/>
+      <geom mesh="convex_piece_19" class="collision"/>
+      <geom mesh="convex_piece_2" class="collision"/>
+      <geom mesh="convex_piece_3" class="collision"/>
+      <geom mesh="convex_piece_4" class="collision"/>
+      <geom mesh="convex_piece_5" class="collision"/>
+      <geom mesh="convex_piece_6" class="collision"/>
+      <geom mesh="convex_piece_7" class="collision"/>
+      <geom mesh="convex_piece_8" class="collision"/>
+      <geom mesh="convex_piece_9" class="collision"/>
+    </body>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.04" name="bottom_site" />
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 0.04" name="top_site" />
+      <site rgba="0 0 0 0" size="0.005" pos="0.005 0.005 0" name="horizontal_radius_site" />
+    </body>
+  </worldbody>
+</mujoco>

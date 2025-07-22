@@ -1,0 +1,164 @@
+
+<mujoco model="pineapple_1c77bd376c0940cab3ec72b037a6fc46">
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="1"/>
+    </default>
+    <default class="collision">
+      <geom type="mesh" condim="6" group="0"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="texture" file="material_0.png"/>
+    <material name="Material.001" texture="texture" specular="0.5" shininess="0.25"/>
+    <mesh file="visual_mesh.obj" name="visual_mesh"/>
+    <mesh file="meshes/convex_piece_0.obj" name="convex_piece_0"/>
+    <mesh file="meshes/convex_piece_1.obj" name="convex_piece_1"/>
+    <mesh file="meshes/convex_piece_10.obj" name="convex_piece_10"/>
+    <mesh file="meshes/convex_piece_11.obj" name="convex_piece_11"/>
+    <mesh file="meshes/convex_piece_12.obj" name="convex_piece_12"/>
+    <mesh file="meshes/convex_piece_13.obj" name="convex_piece_13"/>
+    <mesh file="meshes/convex_piece_14.obj" name="convex_piece_14"/>
+    <mesh file="meshes/convex_piece_15.obj" name="convex_piece_15"/>
+    <mesh file="meshes/convex_piece_16.obj" name="convex_piece_16"/>
+    <mesh file="meshes/convex_piece_17.obj" name="convex_piece_17"/>
+    <mesh file="meshes/convex_piece_18.obj" name="convex_piece_18"/>
+    <mesh file="meshes/convex_piece_19.obj" name="convex_piece_19"/>
+    <mesh file="meshes/convex_piece_2.obj" name="convex_piece_2"/>
+    <mesh file="meshes/convex_piece_20.obj" name="convex_piece_20"/>
+    <mesh file="meshes/convex_piece_21.obj" name="convex_piece_21"/>
+    <mesh file="meshes/convex_piece_22.obj" name="convex_piece_22"/>
+    <mesh file="meshes/convex_piece_23.obj" name="convex_piece_23"/>
+    <mesh file="meshes/convex_piece_24.obj" name="convex_piece_24"/>
+    <mesh file="meshes/convex_piece_25.obj" name="convex_piece_25"/>
+    <mesh file="meshes/convex_piece_26.obj" name="convex_piece_26"/>
+    <mesh file="meshes/convex_piece_27.obj" name="convex_piece_27"/>
+    <mesh file="meshes/convex_piece_28.obj" name="convex_piece_28"/>
+    <mesh file="meshes/convex_piece_29.obj" name="convex_piece_29"/>
+    <mesh file="meshes/convex_piece_3.obj" name="convex_piece_3"/>
+    <mesh file="meshes/convex_piece_30.obj" name="convex_piece_30"/>
+    <mesh file="meshes/convex_piece_31.obj" name="convex_piece_31"/>
+    <mesh file="meshes/convex_piece_32.obj" name="convex_piece_32"/>
+    <mesh file="meshes/convex_piece_33.obj" name="convex_piece_33"/>
+    <mesh file="meshes/convex_piece_34.obj" name="convex_piece_34"/>
+    <mesh file="meshes/convex_piece_35.obj" name="convex_piece_35"/>
+    <mesh file="meshes/convex_piece_36.obj" name="convex_piece_36"/>
+    <mesh file="meshes/convex_piece_37.obj" name="convex_piece_37"/>
+    <mesh file="meshes/convex_piece_38.obj" name="convex_piece_38"/>
+    <mesh file="meshes/convex_piece_39.obj" name="convex_piece_39"/>
+    <mesh file="meshes/convex_piece_4.obj" name="convex_piece_4"/>
+    <mesh file="meshes/convex_piece_40.obj" name="convex_piece_40"/>
+    <mesh file="meshes/convex_piece_41.obj" name="convex_piece_41"/>
+    <mesh file="meshes/convex_piece_42.obj" name="convex_piece_42"/>
+    <mesh file="meshes/convex_piece_43.obj" name="convex_piece_43"/>
+    <mesh file="meshes/convex_piece_44.obj" name="convex_piece_44"/>
+    <mesh file="meshes/convex_piece_45.obj" name="convex_piece_45"/>
+    <mesh file="meshes/convex_piece_46.obj" name="convex_piece_46"/>
+    <mesh file="meshes/convex_piece_47.obj" name="convex_piece_47"/>
+    <mesh file="meshes/convex_piece_48.obj" name="convex_piece_48"/>
+    <mesh file="meshes/convex_piece_49.obj" name="convex_piece_49"/>
+    <mesh file="meshes/convex_piece_5.obj" name="convex_piece_5"/>
+    <mesh file="meshes/convex_piece_50.obj" name="convex_piece_50"/>
+    <mesh file="meshes/convex_piece_51.obj" name="convex_piece_51"/>
+    <mesh file="meshes/convex_piece_52.obj" name="convex_piece_52"/>
+    <mesh file="meshes/convex_piece_53.obj" name="convex_piece_53"/>
+    <mesh file="meshes/convex_piece_54.obj" name="convex_piece_54"/>
+    <mesh file="meshes/convex_piece_55.obj" name="convex_piece_55"/>
+    <mesh file="meshes/convex_piece_56.obj" name="convex_piece_56"/>
+    <mesh file="meshes/convex_piece_57.obj" name="convex_piece_57"/>
+    <mesh file="meshes/convex_piece_58.obj" name="convex_piece_58"/>
+    <mesh file="meshes/convex_piece_59.obj" name="convex_piece_59"/>
+    <mesh file="meshes/convex_piece_6.obj" name="convex_piece_6"/>
+    <mesh file="meshes/convex_piece_60.obj" name="convex_piece_60"/>
+    <mesh file="meshes/convex_piece_61.obj" name="convex_piece_61"/>
+    <mesh file="meshes/convex_piece_62.obj" name="convex_piece_62"/>
+    <mesh file="meshes/convex_piece_63.obj" name="convex_piece_63"/>
+    <mesh file="meshes/convex_piece_64.obj" name="convex_piece_64"/>
+    <mesh file="meshes/convex_piece_65.obj" name="convex_piece_65"/>
+    <mesh file="meshes/convex_piece_66.obj" name="convex_piece_66"/>
+    <mesh file="meshes/convex_piece_67.obj" name="convex_piece_67"/>
+    <mesh file="meshes/convex_piece_68.obj" name="convex_piece_68"/>
+    <mesh file="meshes/convex_piece_7.obj" name="convex_piece_7"/>
+    <mesh file="meshes/convex_piece_8.obj" name="convex_piece_8"/>
+    <mesh file="meshes/convex_piece_9.obj" name="convex_piece_9"/>
+  </asset>
+  <worldbody>
+    <body>
+    <body name="object">
+      <geom material="Material.001" mesh="visual_mesh" class="visual"/>
+      <geom mesh="convex_piece_0" class="collision"/>
+      <geom mesh="convex_piece_1" class="collision"/>
+      <geom mesh="convex_piece_10" class="collision"/>
+      <geom mesh="convex_piece_11" class="collision"/>
+      <geom mesh="convex_piece_12" class="collision"/>
+      <geom mesh="convex_piece_13" class="collision"/>
+      <geom mesh="convex_piece_14" class="collision"/>
+      <geom mesh="convex_piece_15" class="collision"/>
+      <geom mesh="convex_piece_16" class="collision"/>
+      <geom mesh="convex_piece_17" class="collision"/>
+      <geom mesh="convex_piece_18" class="collision"/>
+      <geom mesh="convex_piece_19" class="collision"/>
+      <geom mesh="convex_piece_2" class="collision"/>
+      <geom mesh="convex_piece_20" class="collision"/>
+      <geom mesh="convex_piece_21" class="collision"/>
+      <geom mesh="convex_piece_22" class="collision"/>
+      <geom mesh="convex_piece_23" class="collision"/>
+      <geom mesh="convex_piece_24" class="collision"/>
+      <geom mesh="convex_piece_25" class="collision"/>
+      <geom mesh="convex_piece_26" class="collision"/>
+      <geom mesh="convex_piece_27" class="collision"/>
+      <geom mesh="convex_piece_28" class="collision"/>
+      <geom mesh="convex_piece_29" class="collision"/>
+      <geom mesh="convex_piece_3" class="collision"/>
+      <geom mesh="convex_piece_30" class="collision"/>
+      <geom mesh="convex_piece_31" class="collision"/>
+      <geom mesh="convex_piece_32" class="collision"/>
+      <geom mesh="convex_piece_33" class="collision"/>
+      <geom mesh="convex_piece_34" class="collision"/>
+      <geom mesh="convex_piece_35" class="collision"/>
+      <geom mesh="convex_piece_36" class="collision"/>
+      <geom mesh="convex_piece_37" class="collision"/>
+      <geom mesh="convex_piece_38" class="collision"/>
+      <geom mesh="convex_piece_39" class="collision"/>
+      <geom mesh="convex_piece_4" class="collision"/>
+      <geom mesh="convex_piece_40" class="collision"/>
+      <geom mesh="convex_piece_41" class="collision"/>
+      <geom mesh="convex_piece_42" class="collision"/>
+      <geom mesh="convex_piece_43" class="collision"/>
+      <geom mesh="convex_piece_44" class="collision"/>
+      <geom mesh="convex_piece_45" class="collision"/>
+      <geom mesh="convex_piece_46" class="collision"/>
+      <geom mesh="convex_piece_47" class="collision"/>
+      <geom mesh="convex_piece_48" class="collision"/>
+      <geom mesh="convex_piece_49" class="collision"/>
+      <geom mesh="convex_piece_5" class="collision"/>
+      <geom mesh="convex_piece_50" class="collision"/>
+      <geom mesh="convex_piece_51" class="collision"/>
+      <geom mesh="convex_piece_52" class="collision"/>
+      <geom mesh="convex_piece_53" class="collision"/>
+      <geom mesh="convex_piece_54" class="collision"/>
+      <geom mesh="convex_piece_55" class="collision"/>
+      <geom mesh="convex_piece_56" class="collision"/>
+      <geom mesh="convex_piece_57" class="collision"/>
+      <geom mesh="convex_piece_58" class="collision"/>
+      <geom mesh="convex_piece_59" class="collision"/>
+      <geom mesh="convex_piece_6" class="collision"/>
+      <geom mesh="convex_piece_60" class="collision"/>
+      <geom mesh="convex_piece_61" class="collision"/>
+      <geom mesh="convex_piece_62" class="collision"/>
+      <geom mesh="convex_piece_63" class="collision"/>
+      <geom mesh="convex_piece_64" class="collision"/>
+      <geom mesh="convex_piece_65" class="collision"/>
+      <geom mesh="convex_piece_66" class="collision"/>
+      <geom mesh="convex_piece_67" class="collision"/>
+      <geom mesh="convex_piece_68" class="collision"/>
+      <geom mesh="convex_piece_7" class="collision"/>
+      <geom mesh="convex_piece_8" class="collision"/>
+      <geom mesh="convex_piece_9" class="collision"/>
+    </body>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.04" name="bottom_site" />
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 0.04" name="top_site" />
+      <site rgba="0 0 0 0" size="0.005" pos="0.005 0.005 0" name="horizontal_radius_site" />
+    </body>
+  </worldbody>
+</mujoco>

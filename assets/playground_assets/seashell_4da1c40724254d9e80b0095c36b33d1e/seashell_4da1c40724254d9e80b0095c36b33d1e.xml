@@ -1,0 +1,40 @@
+
+<mujoco model="seashell_4da1c40724254d9e80b0095c36b33d1e">
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="1"/>
+    </default>
+    <default class="collision">
+      <geom type="mesh" condim="6" group="0"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="texture" file="material_0.png"/>
+    <material name="Material.001" texture="texture" specular="0.5" shininess="0.25"/>
+    <mesh file="visual_mesh.obj" name="visual_mesh"/>
+    <mesh file="meshes/convex_piece_0.obj" name="convex_piece_0"/>
+    <mesh file="meshes/convex_piece_1.obj" name="convex_piece_1"/>
+    <mesh file="meshes/convex_piece_2.obj" name="convex_piece_2"/>
+    <mesh file="meshes/convex_piece_3.obj" name="convex_piece_3"/>
+    <mesh file="meshes/convex_piece_4.obj" name="convex_piece_4"/>
+    <mesh file="meshes/convex_piece_5.obj" name="convex_piece_5"/>
+    <mesh file="meshes/convex_piece_6.obj" name="convex_piece_6"/>
+  </asset>
+  <worldbody>
+    <body>
+    <body name="object">
+      <geom material="Material.001" mesh="visual_mesh" class="visual"/>
+      <geom mesh="convex_piece_0" class="collision"/>
+      <geom mesh="convex_piece_1" class="collision"/>
+      <geom mesh="convex_piece_2" class="collision"/>
+      <geom mesh="convex_piece_3" class="collision"/>
+      <geom mesh="convex_piece_4" class="collision"/>
+      <geom mesh="convex_piece_5" class="collision"/>
+      <geom mesh="convex_piece_6" class="collision"/>
+    </body>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.04" name="bottom_site" />
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 0.04" name="top_site" />
+      <site rgba="0 0 0 0" size="0.005" pos="0.005 0.005 0" name="horizontal_radius_site" />
+    </body>
+  </worldbody>
+</mujoco>

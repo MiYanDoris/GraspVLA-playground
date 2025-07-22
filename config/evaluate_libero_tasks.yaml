@@ -1,0 +1,25 @@
+# Evaluate Libero Tasks Configuration
+defaults:
+  - _self_
+
+# Agent communication
+port: 6666
+debug: false
+
+# Experiment parameters
+name: libero_tasks  # Required parameter, must be provided
+trial_num: 50
+seed_list_file: null  # Optional: path to JSON file with seed list
+
+# Benchmark settings
+benchmarks:
+  - libero_object
+  - libero_10
+  - libero_goal
+
+# Task limits
+max_tasks_per_benchmark: 10
+
+# Output directories (computed from name)
+data_dir: data/${name}
+video_save_dir: data/${name}/videos 
