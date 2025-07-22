@@ -1,0 +1,9 @@
+# Get Statistics Configuration
+defaults:
+  - _self_
+
+# Required parameters
+name: ???  # Must be provided - name of the experiment to compute statistics for
+
+# Optional parameters
+output_dir: data/${name}  # Directory containing the evaluation results 

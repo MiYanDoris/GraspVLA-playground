@@ -1,0 +1,21 @@
+# Playground Configuration
+defaults:
+  - _self_
+
+# Agent communication
+port: 6666
+debug: false
+
+# Experiment parameters
+name: playground_test  # Required parameter, must be provided
+trial_num: 10
+object_num: 6
+seed_list_file: null  # Optional path to json file containing seed list
+
+# Asset directories
+object_root_dir: assets/playground_assets
+
+# Output directories (computed from name)
+data_dir: data/${name}
+video_save_dir: data/${name}/videos
+bddl_file_name: libero/libero/bddl_files/libero_object/playground.bddl 

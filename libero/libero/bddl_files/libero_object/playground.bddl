@@ -1,0 +1,50 @@
+(define (problem LIBERO_Floor_Manipulation)
+    (:domain robosuite)
+    (:language pick up mouse)
+    (:regions
+        (bin_region
+            (:target floor)
+            (:ranges (
+                (-0.01 0.25 0.01 0.27)
+                )
+            )
+        )
+        (target_object_region
+            (:target floor)
+            (:ranges (
+                (-0.145 -0.265 -0.095 -0.215)
+                )
+            )
+        )
+    )
+
+    (:fixtures
+        floor - floor
+    )
+
+    (:objects
+    objaverse_pumpkin_1 - objaverse_pumpkin
+    objaverse_radish_1 - objaverse_radish
+    objaverse_stapler_1 - objaverse_stapler
+    objaverse_airplane_1 - objaverse_airplane
+    objaverse_watermelon_1 - objaverse_watermelon
+    objaverse_mouse_1 - objaverse_mouse
+    )
+
+    (:obj_of_interest
+        objaverse_mouse_1
+    )
+
+    (:init
+    (On objaverse_pumpkin_1 floor_target_object_region)
+    (On objaverse_radish_1 floor_target_object_region)
+    (On objaverse_stapler_1 floor_target_object_region)
+    (On objaverse_airplane_1 floor_target_object_region)
+    (On objaverse_watermelon_1 floor_target_object_region)
+    (On objaverse_mouse_1 floor_target_object_region)
+    )
+
+    (:goal
+        (And (Grasped objaverse_mouse_1))
+    )
+)

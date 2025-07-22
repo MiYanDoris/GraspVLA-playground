@@ -1,0 +1,27 @@
+# Parallel Evaluation Configuration
+defaults:
+  - _self_
+
+# Required parameters
+exp_name: parallel_eval_libero_tasks  # Must be provided - name of the experiment
+
+# Parallel execution settings
+parallel_env_num: 5  # Number of parallel environments to use
+trial_num: 50        # Total number of trials per task
+seed_list_file: null # Optional: path to JSON file with seed list (for non-parallel mode)
+
+# Agent communication (base port, each process gets port + i)
+port: 6666
+
+# Benchmark settings (inherited from evaluate_libero_tasks.yaml)
+benchmarks:
+  - libero_object
+  - libero_10
+  - libero_goal
+
+# Task limits
+max_tasks_per_benchmark: 10
+
+# Output directories (computed from name)
+data_dir: data/${exp_name}
+video_save_dir: data/${exp_name}/videos 
