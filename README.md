@@ -14,9 +14,9 @@ Our playground environment offers the following capabilities:
 ## Installation
 
 ### Prerequisites
-Ensure you have git-lfs installed, as this repository contains large object and robot assets (~1 GB):
+Install Git LFS (for large object and robot assets) and FFmpeg (for video conversion and visualization):
 ```bash
-sudo apt install git-lfs
+sudo apt install git-lfs ffmpeg
 ```
 
 ### Step 1: Clone the Repository
