@@ -103,8 +103,9 @@ python parallel_eval.py
 
 ## Citation
 
-If you find this work useful, please cite:
+If you found this repository useful, please consider to cite the following works:
 
+- Our paper:
 ```bibtex
 @article{deng2025graspvla,
     title={GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data}, 
@@ -114,5 +115,15 @@ If you find this work useful, please cite:
     archivePrefix={arXiv},
     primaryClass={cs.RO},
     url={https://arxiv.org/abs/2505.03233}
+}
+```
+
+- LIBERO benchmark:
+```bibtex
+@article{liu2023libero,
+  title={LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning},
+  author={Liu, Bo and Zhu, Yifeng and Gao, Chongkai and Feng, Yihao and Liu, Qiang and Zhu, Yuke and Stone, Peter},
+  journal={arXiv preprint arXiv:2306.03310},
+  year={2023}
 }
 ```
