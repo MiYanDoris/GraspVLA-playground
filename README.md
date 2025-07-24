@@ -28,7 +28,7 @@ cd GraspVLA-playground
 ### Step 2: Set Up Python Environment
 Create and activate a conda environment with the required dependencies:
 ```bash
-conda create -n playground python=3.8.13
+conda create -n playground python=3.9.0
 conda activate playground
 pip install -r requirements.txt
 ```

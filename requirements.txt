@@ -10,8 +10,8 @@ future==0.18.2
 matplotlib==3.5.3 
 cloudpickle==2.1.0
 gym==0.25.2
+numpy>=1.26.4
 zmq
 python-fcl
 transforms3d
 ninja
-numpy
