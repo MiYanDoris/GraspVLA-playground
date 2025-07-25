@@ -44,7 +44,7 @@ cd ..
 ```
 
 ### Step 4: Install cuRobo
-Install [cuRobo](https://curobo.org/get_started/1_install_instructions.html) with the appropriate CUDA and PyTorch versions. Note that PyTorch >= 1.10 is required, and installation takes approximately 20 minutes. We attach the command we used here for reference.
+Install [cuRobo](https://curobo.org/get_started/1_install_instructions.html) with appropriate CUDA and PyTorch versions. Note that PyTorch >= 1.10 is required, and installation takes approximately 20 minutes. We attach the command we used here for reference.
 
 ```bash
 git clone https://github.com/NVlabs/curobo.git
@@ -64,7 +64,7 @@ Update the paths in `assets/franka_with_extended_finger/franka.yml` to use absol
 ## Usage
 
 ### Starting the Model Server
-Before running any simulations, you must start the model server. For detailed instructions, see the [model server documentation](https://github.com/yanmi/GraspVLA-release/tree/main/model_server).
+Before running any simulations, you must start the model server. For detailed instructions, see the [model server documentation](https://github.com/PKU-EPIC/GraspVLA).
 
 To validate that the server is running correctly:
 ```bash
@@ -72,7 +72,7 @@ python validate_server.py --host 127.0.0.1 --port 6666 --timeout 5
 ```
 A green checkmark indicates the server is ready for use.
 
-### Running the Playground
+### Playground
 Once the model server is active, launch the playground environment:
 ```bash
 python playground.py
@@ -90,13 +90,13 @@ To calculate success rates after running experiments:
 python misc/get_success_rate_per_object.py
 ```
 
-### Running LIBERO Benchmark
+### Evaluate on LIBERO Benchmark
 Once the model server is active, launch the LIBERO benchmark evaluation as shown below. Configuration options are available in `config/evaluate_libero_tasks.yaml`.
 ```bash
 python evaluate_libero_tasks.py
 ```
 
-For faster evaluation, run multiple environments in parallel. Adjust the `parallel_env_num` parameter in `config/parallel_eval.yaml` to control the number of concurrent environments.
+For faster evaluation, run multiple environments in parallel. Adjust the `parallel_env_num` parameter in `config/parallel_eval.yaml` to control the number of concurrent environments. We highly recommend add `compile` flag when starting the model server to speed up the evaluation.
 ```bash
 python parallel_eval.py
 ```
