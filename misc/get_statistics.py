@@ -58,7 +58,7 @@ def main(cfg: DictConfig) -> None:
         fail_num = np.sum([1 for video in prefix_videos if 'fail' in video])
         
         success_rate = success_num / num if num > 0 else 0.0
-        result = f"{prefix_name}: {success_num}/{num} = {success_rate:.2f}"
+        result = f"{prefix_name}: {success_num}/{num} = {success_rate:.3f}"
         
         print(colored(result, "cyan"))
         
