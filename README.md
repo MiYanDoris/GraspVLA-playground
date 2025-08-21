@@ -11,6 +11,9 @@ Our playground environment offers the following capabilities:
 
 ![playground](assets/playground.gif)
 
+## Latest Updates
+- [2025-08-21] To ensure the repository remains accessible to all users, we have **migrated away from Git LFS** due to bandwidth limitations from a recent surge in downloads. This required a complete rewrite of the git history.
+
 ## Installation
 
 ### Prerequisites
