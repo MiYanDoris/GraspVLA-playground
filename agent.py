@@ -27,8 +27,18 @@ import numpy.typing as npt
 class RemoteAgent():
     # Constants
     PROPRIO_HISTORY_SIZE = 4
-    GRIPPER_OPEN = 1.0
+    # Model convention: 1=open, -1=close, 0=keep current state.
+    MODEL_GRIPPER_OPEN = 1.0
+    MODEL_GRIPPER_CLOSE = -1.0
+    # robosuite convention is the opposite.
+    ROBOSUITE_GRIPPER_OPEN = -1.0
+    ROBOSUITE_GRIPPER_CLOSE = 1.0
+    GRIPPER_OPEN = MODEL_GRIPPER_OPEN
     GRIP_TRANSITION_ACTIONS = 4
+    RETRY_LIFT_HEIGHT = 0.3
+    RETRY_LIFT_STEP = 0.025
+    RETRY_OPEN_ACTIONS = 4
+    CLOSED_GRIPPER_QPOS_THRESHOLD = 0.001
     ROBOT_CONFIG_PATH = 'assets/franka_with_extended_finger/franka.yml'
 
     def __init__(self, instruction: str, port: int) -> None:
@@ -115,14 +125,58 @@ class RemoteAgent():
 
         # if the last action chunk is all executed
         if len(self.pred_actions) == 0:
-            self._post_and_get(obs, debug=debug)
+            gripper_is_closed = (
+                np.abs(obs['robot0_gripper_qpos']).sum()
+                < self.CLOSED_GRIPPER_QPOS_THRESHOLD
+            )
+            if gripper_is_closed:
+                self._queue_retry_recovery(obs)
+            else:
+                self._post_and_get(obs, debug=debug)
         action, bbox = self.pred_actions.popleft()
 
-        # Our model uses -1 to denote gripper close, 1 to denote open.
-        # while in robosuite, -1 denotes open, 1 denotes close.
-        # So we need to flip the sign of the gripper state.
-        action[6] = -action[6]
+        action[6] = self._model_gripper_to_robosuite(action[6])
         return action, bbox
+
+    @staticmethod
+    def _model_gripper_to_robosuite(gripper_action: float) -> float:
+        """Convert model gripper action (1=open) to robosuite (-1=open)."""
+        return -gripper_action
+
+    def _queue_retry_recovery(self, obs: Dict[str, Any]) -> None:
+        """Lift a closed gripper, release it, then allow another model attempt."""
+        current_proprio = self.get_current_proprio(obs)
+        xyz = current_proprio[:3]
+        rpy = current_proprio[3:6]
+
+        lift_distance = max(self.RETRY_LIFT_HEIGHT - xyz[2], 0.0)
+        lift_steps = int(np.ceil(lift_distance / self.RETRY_LIFT_STEP))
+
+        for step_index in range(lift_steps):
+            action = np.concatenate([
+                np.copy(xyz),
+                np.copy(rpy),
+                [self.MODEL_GRIPPER_CLOSE],
+            ])
+            action[2] = min(
+                xyz[2] + self.RETRY_LIFT_STEP * (step_index + 1),
+                self.RETRY_LIFT_HEIGHT,
+            )
+            self.pred_actions.append([action, None])
+
+        open_action = np.concatenate([
+            np.copy(xyz),
+            np.copy(rpy),
+            [self.MODEL_GRIPPER_OPEN],
+        ])
+        if lift_steps > 0:
+            open_action[:6] = self.pred_actions[-1][0][:6]
+
+        for _ in range(self.RETRY_OPEN_ACTIONS):
+            self.pred_actions.append([np.copy(open_action), None])
+
+        self.proprio_history.clear()
+        self.finger_state = self.MODEL_GRIPPER_OPEN
 
 
     def _process_proprio(self, obs):
@@ -144,10 +198,11 @@ class RemoteAgent():
     def _post_and_get(self, obs: Dict[str, Any], debug: bool = False) -> None:
         """Send observation data to the model server and turn the received delta action chunk into absolute actions."""
         data = {
-            'front_view_image': [obs["front_view_image"][::-1]],
-            'side_view_image': [obs["side_view_image"][::-1]],
+            'image_wrist_array': [obs["front_view_image"][::-1]],
+            'image_array': [obs["side_view_image"][::-1]],
             'proprio_array': [np.copy(proprio) for proprio in self.proprio_history],
             'text': self.instruction,
+            'env_id': 0,
         }
         self.socket.send_pyobj(data)
         response = self.socket.recv_pyobj()

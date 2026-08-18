@@ -38,10 +38,11 @@ def validate_server(host: str = "127.0.0.1", port: int = 8000, timeout: int = 5)
         mock_proprio = [np.random.randn(7) for _ in range(4)]
         
         test_data = {
-            'front_view_image': [mock_image],
-            'side_view_image': [mock_image],
+            'image_wrist_array': [mock_image],
+            'image_array': [mock_image],
             'proprio_array': mock_proprio,
             'text': 'Validation test instruction',
+            'env_id': 0,
         }
         
         socket.send_pyobj(test_data)

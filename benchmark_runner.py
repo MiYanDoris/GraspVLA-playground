@@ -46,7 +46,7 @@ def create_environment(bddl_file_path: str, seed: int = 0, scene_properties: dic
         "camera_names": ["front_view", "side_view"],
         "camera_heights": 256,
         "camera_widths": 256,
-        "control_freq": 5,
+        "control_freq": 10,
         "controller": "IK_POSE",
         "scene_properties": scene_properties
     }
@@ -63,7 +63,7 @@ def stabilize_scene(env: OffScreenRenderEnv, agent: RemoteAgent, obs: Any, steps
     """
     for _ in range(steps):
         action = agent.get_current_proprio(obs)
-        action[-1] = -1  # Keep gripper opened
+        action[-1] = agent.ROBOSUITE_GRIPPER_OPEN
         obs, _, _, _ = env.step(action)
     return obs
 
